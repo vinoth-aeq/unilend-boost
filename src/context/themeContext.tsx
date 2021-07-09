@@ -1,34 +1,24 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import Cookies from "js-cookie"
+
 export const ThemeContext = createContext(null);
 
 export default function ThemeProvider(props) {
-    const [theme, toggleTheme] = useState<string>("")
-
-    useEffect(() => {
-      let _cache = Cookies.get('theme');
-      console.log(_cache)
-      if(_cache ) {
-        toggleTheme(_cache);
-      }
-      else {
-        toggleTheme("light")
-      }
-    },[])
+  
+  const [theme, toggleTheme] = useState<string>(() => {
+    let _cache = Cookies.get('theme');
+    return _cache ? _cache : "light"
+  })
+  
+  function handleChange (state:string) {
+    toggleTheme(state);
+    Cookies.set('theme', state);
+  }
 
     let data:any = {
         theme,
-        handleToggleTheme : () => {
-        if(theme === "light") {
-            toggleTheme("dark");
-            Cookies.set('theme', 'dark');
-        }
-        else {
-            toggleTheme("light");
-            Cookies.set('theme', 'light');
-
-        }
-    }
+        handleToggleTheme : () => 
+          handleChange(theme === "light" ? "dark" :"light")
     }
 
   return (
