@@ -1,49 +1,50 @@
-import React, { useState } from 'react';
+import React, { useContext } from "react";
 import Switch from "react-switch";
-import {Navbar,Nav,Button} from 'react-bootstrap'
+import { Navbar, Nav, Button, Container, Row, Col } from "react-bootstrap";
 import UboostLogo from "../../assets/uLogo.svg";
-import './index.scss';
+import "./index.scss";
+import { ThemeContext } from "context/themeContext";
 
 const NavBar = () => {
-  const [checked, setChecked] = useState(false);
-  const handleChange = nextChecked => {
-    setChecked(nextChecked);
-  };
+  const data: any = useContext(ThemeContext);
 
-  return(
-	<div id="app">
-	<Navbar className="Navbar-css"
-  collapseOnSelect expand="lg" >
-      <Navbar.Brand  className="header-title" href="#home">
-        <img
-          alt="Logo"
-          src={UboostLogo}
-          className="header-logo"
-        />{' '}
-      Uboost
-      </Navbar.Brand>
-   
-    <Nav className="navLink-css">
-     <Nav.Link href="#selectChain" ><Button variant="primary" className="select-btn">Select Chain</Button></Nav.Link>
-      <Nav.Link href="#connect"> <Button className="connect-wallet-btn">Connect wallet</Button></Nav.Link>
-      <Nav.Link >
-      <Switch
-          onChange={handleChange}
-          checked={checked}
-          uncheckedIcon={false}
-          checkedIcon={false}
-          onColor="#fff"
-          onHandleColor="#FED330"
-          height={30}
-          width={55}
-          
-          className="react-switch"
-        />
-      </Nav.Link>
-    </Nav>
-    
-</Navbar>
-	</div>
+  return (
+    <div className={`App ${data.theme}`}>
+      <Container>
+        <Row>
+          <Navbar className="Navbar-css" collapseOnSelect expand="lg">
+            <Col xs={12} sm={12} md={4} lg={4}>
+              <Navbar.Brand className="header-css" href="#home">
+                <img alt="Logo" src={UboostLogo} className="header-logo" />
+                <span className="header-title">Uboost</span>
+              </Navbar.Brand>
+            </Col>
+
+            <Col xs={12} sm={12} md={8} lg={8}>
+              <Nav className="navLink-css">
+                <Button variant="primary" className="header-btn-css">
+                  Select Chain
+                </Button>
+                <Button className="header-btn-css">Connect wallet</Button>
+                <Switch
+                  checked={data.theme === "light" ? true : false}
+                  onChange={data.handleToggleTheme}
+                  uncheckedIcon={false}
+                  checkedIcon={false}
+                  onColor="#fff"
+                  offColor="#215355"
+                  onHandleColor="FED330"
+                  offHandleColor="#071F21"
+                  height={30}
+                  width={55}
+                  className="react-switch"
+                />
+              </Nav>
+            </Col>
+          </Navbar>
+        </Row>
+      </Container>
+    </div>
   );
 };
 

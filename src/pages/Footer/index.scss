@@ -1,54 +1,30 @@
-.Footer-Navbar-css{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 4rem;
+.footer-container{
+   position: absolute;
+   bottom: 0;
 }
 
-.Footer-nav-auto{
-    width: 20%;
-    display: flex;
-    justify-content: space-between;
-    // background-color: aqua;
-}
 
-.Footer-navLink{
-    width: 30%;
+.footer-links{
     display: flex;
-    justify-content: space-between;
-    color: #474747;
-    font-family: 'Public Sans';
+    align-items: center;
+    justify-content: space-around;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     font-style: normal;
 }
 
-.median-logo{
-    width: 48.69px;
-    height: 53.17px;
-    left: 1494px;
-    top: 986.82px;
+
+
+.footer-social-media{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-.twitter-logo{
+
+.footer-logo{
     width: 48.69px;
     height: 53.17px;
-    left: 1494px;
-    top: 986.82px;
+    margin: 1rem;
 }
 
-.instagram-logo{
-    width: 48.69px;
-    height: 53.17px;
-    left: 1494px;
-    top: 986.82px;
-}
-
-.telegram-logo{
-    width: 48.69px;
-    height: 53.17px;
-    left: 1494px;
-    top: 986.82px;
-}
