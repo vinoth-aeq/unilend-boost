@@ -1,0 +1,30 @@
+.footer-container{
+   position: absolute;
+   bottom: 0;
+}
+
+
+.footer-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: normal;
+}
+
+
+
+.footer-social-media{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+
+.footer-logo{
+    width: 48.69px;
+    height: 53.17px;
+    margin: 1rem;
+}
+
