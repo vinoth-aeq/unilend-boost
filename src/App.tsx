@@ -1,10 +1,20 @@
-import React from 'react';
+import BigNumber from 'bignumber.js';
+import { ThemeContext } from 'context/themeContext';
+import React, { useContext } from 'react';
 import './App.scss';
 import "./theme.scss";
 
+BigNumber.config({
+  EXPONENTIAL_AT: 1000,
+  DECIMAL_PLACES: 80,
+});
+
 function App() {
+  
+  const data:any = useContext(ThemeContext);
+
   return (
-    <div className="App dark">
+    <div className={ `App ${data.theme}`}>
       <header className="App-header">
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -17,6 +27,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={data.handleToggleTheme}>{data.theme}</button>
       </header>
     </div>
   );
