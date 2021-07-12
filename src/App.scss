@@ -1,11 +1,91 @@
+@import "./theme.scss";
+
 .App {
   color: var(--theme-main-text);
   background: var(--theme-page-background);
-  height: 100vh;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 120px auto 100px;
+}
+.main-body {
+  display: grid;
+  overflow: auto;
+  place-content: center;
 }
 
 @media screen and (min-width: 1400) {
   .container {
     min-width: 90%;
+  }
+}
+
+// custom card
+
+.paper {
+  // color: var(--theme-main-text-invert);
+  width: 550px;
+  min-height: 600px;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.custom-card {
+  background-color: var(--theme-paper-bg);
+  box-shadow: 5px 5px 10px rgba(1, 9, 30, 0.2);
+  border-radius: 14px;
+}
+
+.custom-card-body {
+  // display: grid;
+  display: grid;
+  grid-gap: 15px;
+  height: 100%;
+  grid-template-rows: 160px 120px auto;
+}
+
+.settings {
+  display: flex;
+  justify-content: flex-end;
+  height: 20px;
+  img {
+    cursor: pointer;
+  }
+}
+
+.selectDex {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  height: 100px;
+  justify-items: center;
+}
+
+.header-btn {
+  @include btn-base();
+  width: 10rem;
+  min-width: 10rem;
+  background: var(--theme-button-bg-color);
+  border-radius: 6px;
+  margin-right: 2rem;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: var(--theme-button-bg-color);
+  }
+}
+
+.switch-btn {
+  @include btn-base();
+  background: var(--theme-switch-button-bg);
+  min-width: 150px;
+  max-width: 190px;
+  border-radius: 50px;
+  font-weight: 600;
+  &:hover,
+  &:active,
+  &:focus {
+    background: var(--theme-switch-button-bg);
   }
 }
