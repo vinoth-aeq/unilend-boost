@@ -3,3 +3,9 @@
   background: var(--theme-page-background);
   height: 100vh;
 }
+
+@media screen and (min-width: 1400) {
+  .container {
+    min-width: 90%;
+  }
+}

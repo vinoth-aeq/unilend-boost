@@ -1,23 +1,24 @@
-import React from 'react';
-import './App.scss';
+import BigNumber from "bignumber.js";
+import { ThemeContext } from "context/themeContext";
+import React, { useContext } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
 import "./theme.scss";
+import NavBar from "./component/UI/layout/Navbar/index";
+import Footer from "component/UI//layout/Footer";
+
+BigNumber.config({
+  EXPONENTIAL_AT: 1000,
+  DECIMAL_PLACES: 80,
+});
 
 function App() {
+  const data: any = useContext(ThemeContext);
+
   return (
-    <div className="App dark">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${data.theme}`}>
+      <NavBar />
+      <Footer />
     </div>
   );
 }
