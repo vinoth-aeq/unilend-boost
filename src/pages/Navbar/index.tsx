@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext ,useState} from "react";
 import Switch from "react-switch";
 import { Navbar, Nav, Button, Container, Row, Col } from "react-bootstrap";
 import UboostLogo from "../../assets/uLogo.svg";
@@ -7,10 +7,11 @@ import { ThemeContext } from "context/themeContext";
 
 const NavBar = () => {
   const data: any = useContext(ThemeContext);
+  const [modalShow, setModalShow] = useState(false);
 
   return (
     <div className={`App ${data.theme}`}>
-      <Container>
+      <div className="custom-container">
         <Row>
           <Navbar className="Navbar-css" collapseOnSelect expand="lg">
             <Col xs={12} sm={12} md={4} lg={4}>
@@ -43,7 +44,11 @@ const NavBar = () => {
             </Col>
           </Navbar>
         </Row>
-      </Container>
+      </div>
+
+      <div>
+        
+      </div>
     </div>
   );
 };

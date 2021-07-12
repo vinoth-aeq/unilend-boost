@@ -16,11 +16,11 @@ const Footer = () => {
   const data: any = useContext(ThemeContext);
 
   return (
-    <Container fluid className="footer-container">
-      <Row>
+    <div className="footer-container">
+      <Row className="custom-footer-row">
         <Col xs={4} className="footer-links">
-          <p className="Footer-nav-auto">Docs</p>
-          <p className="Footer-nav-auto">Contact Us</p>
+          <p className="footer-nav-auto" >Docs</p>
+          <p className="footer-nav-auto">Contact Us</p>
         </Col>
 
         <Col xs={8} className="footer-social-media">
@@ -30,7 +30,7 @@ const Footer = () => {
           <img alt="Logo" src={data.theme === "light" ? TelegramLight : TelegramDark} className="footer-logo" />
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 
