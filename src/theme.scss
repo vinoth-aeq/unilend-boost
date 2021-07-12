@@ -1,17 +1,63 @@
 .light {
-    --theme-main-text: #3E3E3E;
-    --theme-page-background:linear-gradient(252.44deg, #7DD6D3 0%, #FFFFFF 49.27%, #7DD6D3 100%);
-    --theme-text-color: #474747;
-    --theme-button-bg-color: #FFFFFF;
-    // --theme-card-bg-color: #215355;
- 
-    
+  --theme-main-text: #3e3e3e;
+  --theme-main-text-invert: white;
+  --theme-page-background: linear-gradient(
+    252.44deg,
+    #7dd6d3 0%,
+    #ffffff 49.27%,
+    #7dd6d3 100%
+  );
+  --theme-paper-bg: #fcfcfc;
+  --theme-text-color: #474747;
+  --theme-button-bg-color: #ffffff;
+  --theme-switch-button-bg: #ccfbf9;
+  --theme-max-btn: #ffffff;
 }
 
 .dark {
-    --theme-main-text: white;
-    --theme-page-background: linear-gradient(108.49deg, #062829 14.09%, #054548 46.64%, #07383C 68.08%, #071518 90.63%);
-    --theme-text-color: #FFFFFF;
-    --theme-button-bg-color: #215355;
-    // --theme-card-bg-color: #215355;
+  --theme-main-text: white;
+  --theme-main-text-invert: #3e3e3e;
+  --theme-page-background: linear-gradient(
+    108.49deg,
+    #062829 14.09%,
+    #054548 46.64%,
+    #07383c 68.08%,
+    #071518 90.63%
+  );
+  --theme-paper-bg: #215355;
+  --theme-text-color: #ffffff;
+  --theme-button-bg-color: #071f2187;
+  --theme-switch-button-bg: #071f2187;
+  --theme-max-btn: #205355;
+}
+
+@font-face {
+  font-family: "TimeTravel";
+  src: url(./assets//fonts/Timetravel-lgKje.ttf);
+}
+
+@mixin select() {
+  align-items: center;
+  display: grid;
+  justify-items: center;
+}
+
+@mixin btn-base() {
+  padding: 5px 10px;
+  border: #fff !important;
+  color: var(--theme-text-color);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.14);
+  height: 45px;
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: none;
+    filter: brightness(0.95);
+    color: var(--theme-text-color);
+  }
+
+  img {
+    height: 20px;
+    padding-right: 10px;
+  }
 }

@@ -1,11 +1,100 @@
+// @import "./theme.scss";
+@import "./styles/button.scss";
 .App {
   color: var(--theme-main-text);
   background: var(--theme-page-background);
-  height: 100vh;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 120px auto 100px;
+}
+.main-body {
+  display: grid;
+  overflow: auto;
+  place-content: center;
 }
 
 @media screen and (min-width: 1400) {
   .container {
     min-width: 90%;
   }
+}
+
+// custom card
+
+.paper {
+  // color: var(--theme-main-text-invert);
+  width: 550px;
+  min-height: 600px;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.custom-card {
+  background-color: var(--theme-paper-bg);
+  box-shadow: 5px 5px 10px rgba(1, 9, 30, 0.2);
+  border-radius: 14px;
+}
+
+.input-card {
+  background: var(--theme-switch-button-bg);
+  border-radius: 23px;
+  input {
+    background: transparent;
+    border: none;
+    color: inherit;
+    height: 50px;
+    font-size: 1.5rem;
+    &:focus-visible {
+      border: none;
+      outline: 0;
+    }
+  }
+}
+
+.custom-card-body {
+  // display: grid;
+  display: grid;
+  grid-gap: 15px;
+  height: 100%;
+  grid-template-rows: 160px 120px auto;
+}
+
+.settings {
+  display: flex;
+  justify-content: flex-end;
+  height: 20px;
+  img {
+    cursor: pointer;
+  }
+}
+
+.main-action {
+  display: grid;
+  height: 100px;
+  place-items: center;
+}
+.selectDex {
+  @include select();
+  grid-template-columns: 1fr 60px 1fr;
+
+  height: 100px;
+}
+
+.selectCoin {
+  @include select();
+  grid-template-columns: 1fr 120px 150px;
+
+  height: 85px;
+}
+
+.liquidity {
+  font-weight: 500;
+}
+
+.transactionBody {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
 }
