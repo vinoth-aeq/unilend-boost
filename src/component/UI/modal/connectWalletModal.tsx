@@ -9,7 +9,7 @@ const ConnectWalletModal = (props) => {
   const data: any = useContext(ThemeContext);
    
   return (
-    <div className={`App ${data.dark}`} >
+    <div className={`${data.theme}`} >
       <Modal  {...props} centered size='md' >
         <Modal.Body className="custom-modalBody">
         <Button className="custom-modal-btn" ><img src={MetamaskLogo} className="metamask-logo"/>Metamask</Button>

@@ -10,7 +10,7 @@ const SelectChainModal = (props) => {
   const data: any = useContext(ThemeContext);
 
   return (
-    <div className={`App ${data.theme}`}>
+    <div className={`${data.theme}`}>
       <Modal {...props} centered>
         <Modal.Header style={{ borderBottom: "0" }} >
           <Modal.Title className="selectchain-title">Select Chain</Modal.Title>
