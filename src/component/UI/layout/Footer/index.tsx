@@ -18,12 +18,12 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <Row className="custom-footer-row">
-        <Col xs={4} className="footer-links">
+        <Col xs={12} md={6} className="footer-links">
           <p className="footer-nav-auto">Docs</p>
           <p className="footer-nav-auto">Contact Us</p>
         </Col>
 
-        <Col xs={8} className="footer-social-media">
+        <Col xs={12} md={6} className="footer-social-media">
           <img
             alt="Logo"
             src={data.theme === "light" ? MedianLight : MedianDark}
