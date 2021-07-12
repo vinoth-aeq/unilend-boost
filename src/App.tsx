@@ -1,11 +1,11 @@
 import BigNumber from "bignumber.js";
-import { ThemeContext } from "context/themeContext";
 import React, { useContext } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+
+import { ThemeContext } from "context/themeContext";
+import Layout from "component/UI/layout";
+import MainCard from "component/UI/MainCard/mainCard";
+
 import "./App.scss";
-import "./theme.scss";
-import NavBar from "./component/UI/layout/Navbar/index";
-import Footer from "component/UI//layout/Footer";
 
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
@@ -17,8 +17,9 @@ function App() {
 
   return (
     <div className={`App ${data.theme}`}>
-      <NavBar />
-      <Footer />
+      <Layout>
+        <MainCard />
+      </Layout>
     </div>
   );
 }

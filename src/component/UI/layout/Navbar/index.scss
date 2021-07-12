@@ -1,57 +1,42 @@
-.custom-Navbar{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.custom-Navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.custom-container{
-    max-width: 95%;
-    margin: auto;
+.custom-container {
+  max-width: 95%;
+  margin: auto;
 }
 
-.custom-header{
-    display: flex;
-    align-items: center;
+.custom-header {
+  display: flex;
+  align-items: center;
 }
 
-.header-logo{
-    width: 60.09px;
-    height: 94.81px;
-    left: 63px;
-    top: 50px;
+.header-logo {
+  width: 60.09px;
+  height: 94.81px;
+  left: 63px;
+  top: 50px;
 }
 
-.header-title{
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.19);
-    text-transform: capitalize;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 39px;
-    line-height: 42px;
-    color: var(--theme-text-color);
+.header-title {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.19);
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 29px;
+  line-height: 42px;
+  padding-left: 10px;
+  color: var(--theme-text-color);
+  font-family: "TimeTravel";
 }
 
-.custom-navLink{
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    
+.custom-navLink {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
 }
-
-
-
-.header-btn{
-    width: 10rem;
-    min-width: 10rem;
-    background: var(--theme-button-bg-color);
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.14);
-    border-radius: 6px;
-    border: #fff !important;
-    color: var(--theme-text-color);
-    padding: 5px 10px;
-    margin-right: 2rem;
-}
-
-
- 
