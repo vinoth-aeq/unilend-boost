@@ -1,0 +1,68 @@
+
+// @import '../../../theme.scss';
+// $colormodal: #215355;
+
+.custom-modalBody{
+    background-color: #062829;
+    color: var(--theme-main-text);
+    // width: 27vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // border-radius: 10px;
+}
+
+.metamask-logo{
+    width: 35px;
+    height: 40px;
+}
+
+.custom-modal-btn { 
+  width: 60%;
+  height: 5rem;
+  background-color: #215355;
+  border: 2px solid #215355;
+  cursor: pointer;
+  color: #fff;
+  margin: 1rem 0;
+  display: flex;
+  padding: 0 5rem;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ .selectchain-title {
+     width: 100%;
+    // background-color: #062829;
+    text-align: center;
+ }
+
+ .network-logo{
+    width: 40px;
+    height: 50px;
+    align-self: center;
+ }
+
+ .network-title{
+    text-align: center;
+ }
+
+
+ .custom-selectchain-body{
+     
+     display: flex;
+     justify-content: space-around;
+     height: 30vh;
+     padding: 1rem;
+ }
+
+ .selectchain-list{
+     width: 25%;
+     height: 18vh;
+     display: flex;
+     flex-direction: column;
+     border-radius: 30px;
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     justify-content: center;
+ }
+
