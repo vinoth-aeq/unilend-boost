@@ -1,12 +1,9 @@
 @import "../../../theme.scss";
-// $colormodal: #215355;
 
 .custom-modalBody {
-  // width: 27vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // border-radius: 10px;
 }
 
 .modal-content {
@@ -20,6 +17,12 @@
   }
 }
 
+.model-switch-light {
+  .modal-content {
+    background-color: #fff;
+    color: black;
+  }
+}
 
 
 .metamask-logo {
@@ -28,14 +31,17 @@
 }
 
 .custom-modal-btn {
+  @include btn-base();
   width: 60%;
   height: 5rem;
+  // background: var(--theme-modal-bg-color);
   background: linear-gradient(
     306.61deg,
     rgba(25, 116, 94, 0.189) 3.25%,
     rgba(0, 219, 168, 0.3) 122.38%
   );
   border: 0px solid #215355;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   color: var(--theme-main-text);
   margin: 1rem 0;
@@ -43,6 +49,15 @@
   padding: 0 5rem;
   justify-content: space-between;
   align-items: center;
+  &:hover,
+  &:active,
+  &:focus {
+    background: linear-gradient(
+      306.61deg,
+      rgba(25, 116, 94, 0.189) 3.25%,
+      rgba(0, 219, 168, 0.3) 122.38%
+    );
+  }
 }
 
 .selectchain-title {
@@ -68,6 +83,9 @@
 }
 
 .selectchain-list {
+  
+  cursor: pointer;
+  // background-color: var(--theme-modal-bg-color);
   background: linear-gradient(
     306.61deg,
     rgba(25, 116, 94, 0.189) 3.25%,
