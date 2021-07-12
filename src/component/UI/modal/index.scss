@@ -20,6 +20,8 @@
   }
 }
 
+
+
 .metamask-logo {
   width: 35px;
   height: 40px;
@@ -33,10 +35,9 @@
     rgba(25, 116, 94, 0.189) 3.25%,
     rgba(0, 219, 168, 0.3) 122.38%
   );
-
-  border: 2px solid #215355;
+  border: 0px solid #215355;
   cursor: pointer;
-  color: #fff;
+  color: var(--theme-main-text);
   margin: 1rem 0;
   display: flex;
   padding: 0 5rem;
@@ -46,7 +47,6 @@
 
 .selectchain-title {
   width: 100%;
-  // background-color: #062829;
   text-align: center;
 }
 
