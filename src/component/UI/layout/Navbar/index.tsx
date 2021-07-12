@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext ,useState} from "react";
 import Switch from "react-switch";
 import { Navbar, Nav, Button, Container, Row, Col } from "react-bootstrap";
 import UboostLogo from "assets/uLogo.svg";
@@ -10,7 +10,7 @@ const NavBar = () => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
-    <div>
+    <div >
       <div className="custom-container">
         <Row>
           <Navbar className="custom-Navbar" collapseOnSelect expand="lg">
@@ -26,12 +26,7 @@ const NavBar = () => {
                 <Button variant="primary" className="header-btn">
                   Select Chain
                 </Button>
-                <Button
-                  className="header-btn"
-                  onClick={() => setModalShow(true)}
-                >
-                  Connect wallet
-                </Button>
+                <Button className="header-btn" onClick={() => setModalShow(true)}>Connect wallet</Button>
                 <Switch
                   checked={data.theme === "light" ? true : false}
                   onChange={data.handleToggleTheme}
