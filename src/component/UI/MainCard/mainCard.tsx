@@ -1,7 +1,9 @@
 import { FC } from "react";
 import { Card } from "react-bootstrap";
+import SelectCoin from "./selectCoin";
 
 import SelectDex from "./selectDex";
+import TransactionCard from "./transactionCard";
 
 const MainCard: FC = (props) => {
   return (
@@ -13,10 +15,14 @@ const MainCard: FC = (props) => {
           </Card.Body>
         </Card>
         <Card className={`custom-card`}>
-          <Card.Body>This is some text within a card body.</Card.Body>
+          <Card.Body>
+            <SelectCoin />
+          </Card.Body>
         </Card>
         <Card className={`custom-card`}>
-          <Card.Body>This is some text within a card body.</Card.Body>
+          <Card.Body>
+            <TransactionCard />
+          </Card.Body>
         </Card>
       </Card.Body>
     </Card>

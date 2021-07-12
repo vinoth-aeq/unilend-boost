@@ -1,0 +1,55 @@
+@import "../theme.scss";
+
+.header-btn {
+  @include btn-base();
+  width: 10rem;
+  min-width: 10rem;
+  background: var(--theme-button-bg-color);
+  border-radius: 6px;
+  margin-right: 2rem;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: var(--theme-button-bg-color);
+  }
+}
+
+.switch-btn {
+  @include btn-base();
+  background: var(--theme-button-bg-color);
+
+  min-width: 150px;
+  width: 190px;
+  max-width: 190px;
+  border-radius: 50px;
+  font-weight: 600;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: var(--theme-button-bg-color);
+  }
+
+  &.selected {
+    background: var(--theme-switch-button-bg);
+  }
+}
+
+.max-button {
+  @include btn-base();
+  border-radius: 12px;
+  background: var(--theme-max-btn);
+  &:hover,
+  &:active,
+  &:focus {
+    background: var(--theme-max-btn);
+  }
+}
+
+.main-action-btn {
+  max-width: 250px;
+  padding: 20px 30px;
+  min-width: 290px;
+  height: auto;
+}

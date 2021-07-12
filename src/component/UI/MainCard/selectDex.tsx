@@ -20,7 +20,7 @@ const SelectDex = () => {
         />
       </div>
       <div className={`selectDex`}>
-        <Button className="switch-btn">
+        <Button className="switch-btn selected">
           <img src={unilendLogo} alt="" />
           Unilend
         </Button>

@@ -1,5 +1,5 @@
-@import "./theme.scss";
-
+// @import "./theme.scss";
+@import "./styles/button.scss";
 .App {
   color: var(--theme-main-text);
   background: var(--theme-page-background);
@@ -36,6 +36,22 @@
   border-radius: 14px;
 }
 
+.input-card {
+  background: var(--theme-switch-button-bg);
+  border-radius: 23px;
+  input {
+    background: transparent;
+    border: none;
+    color: inherit;
+    height: 50px;
+    font-size: 1.5rem;
+    &:focus-visible {
+      border: none;
+      outline: 0;
+    }
+  }
+}
+
 .custom-card-body {
   // display: grid;
   display: grid;
@@ -53,39 +69,32 @@
   }
 }
 
-.selectDex {
-  align-items: center;
+.main-action {
   display: grid;
-  grid-template-columns: 1fr 60px 1fr;
   height: 100px;
-  justify-items: center;
+  place-items: center;
+}
+.selectDex {
+  @include select();
+  grid-template-columns: 1fr 60px 1fr;
+
+  height: 100px;
 }
 
-.header-btn {
-  @include btn-base();
-  width: 10rem;
-  min-width: 10rem;
-  background: var(--theme-button-bg-color);
-  border-radius: 6px;
-  margin-right: 2rem;
+.selectCoin {
+  @include select();
+  grid-template-columns: 1fr 120px 150px;
 
-  &:hover,
-  &:active,
-  &:focus {
-    background: var(--theme-button-bg-color);
-  }
+  height: 85px;
 }
 
-.switch-btn {
-  @include btn-base();
-  background: var(--theme-switch-button-bg);
-  min-width: 150px;
-  max-width: 190px;
-  border-radius: 50px;
-  font-weight: 600;
-  &:hover,
-  &:active,
-  &:focus {
-    background: var(--theme-switch-button-bg);
-  }
+.liquidity {
+  font-weight: 500;
+}
+
+.transactionBody {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
 }
