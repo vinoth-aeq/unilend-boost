@@ -10,23 +10,23 @@ const NavBar = () => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
-    <div className={`App ${data.theme}`}>
+    <div >
       <div className="custom-container">
         <Row>
-          <Navbar className="Navbar-css" collapseOnSelect expand="lg">
+          <Navbar className="custom-Navbar" collapseOnSelect expand="lg">
             <Col xs={12} sm={12} md={4} lg={4}>
-              <Navbar.Brand className="header-css" href="#home">
+              <Navbar.Brand className="custom-header" href="#home">
                 <img alt="Logo" src={UboostLogo} className="header-logo" />
                 <span className="header-title">Uboost</span>
               </Navbar.Brand>
             </Col>
 
             <Col xs={12} sm={12} md={8} lg={8}>
-              <Nav className="navLink-css">
-                <Button variant="primary" className="header-btn-css">
+              <Nav className="custom-navLink">
+                <Button variant="primary" className="header-btn">
                   Select Chain
                 </Button>
-                <Button className="header-btn-css">Connect wallet</Button>
+                <Button className="header-btn" onClick={() => setModalShow(true)}>Connect wallet</Button>
                 <Switch
                   checked={data.theme === "light" ? true : false}
                   onChange={data.handleToggleTheme}
@@ -44,10 +44,6 @@ const NavBar = () => {
             </Col>
           </Navbar>
         </Row>
-      </div>
-
-      <div>
-        
       </div>
     </div>
   );
