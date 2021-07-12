@@ -1,16 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext ,useState} from "react";
 import Switch from "react-switch";
-import { Navbar, Nav, Button, Container, Row, Col } from "react-bootstrap";
+import { Navbar, Nav, Button, Row, Col } from "react-bootstrap";
 import UboostLogo from "assets/uLogo.svg";
 import "./index.scss";
 import { ThemeContext } from "context/themeContext";
+import ConnectWalletModal from "component/UI/modal/connectWalletModal";
+import SelectChainModal from "component/UI/modal/selectChainModal";
 
 const NavBar = () => {
   const data: any = useContext(ThemeContext);
   const [modalShow, setModalShow] = useState(false);
+  const [selectChainModalShow, setSelectChainModalShow] = useState(false);
+
 
   return (
-    <div>
+    <div >
       <div className="custom-container">
         <Row>
           <Navbar className="custom-Navbar" collapseOnSelect expand="lg">
@@ -23,15 +27,10 @@ const NavBar = () => {
 
             <Col xs={12} sm={12} md={8} lg={8}>
               <Nav className="custom-navLink">
-                <Button variant="primary" className="header-btn">
+                <Button  className="header-btn" onClick={() => setSelectChainModalShow(true)}>
                   Select Chain
                 </Button>
-                <Button
-                  className="header-btn"
-                  onClick={() => setModalShow(true)}
-                >
-                  Connect wallet
-                </Button>
+                <Button className="header-btn" onClick={() => setModalShow(true)}>Connect wallet</Button>
                 <Switch
                   checked={data.theme === "light" ? true : false}
                   onChange={data.handleToggleTheme}
@@ -49,6 +48,10 @@ const NavBar = () => {
             </Col>
           </Navbar>
         </Row>
+        <ConnectWalletModal show={modalShow}
+        onHide={() => setModalShow(false)}/>
+        <SelectChainModal show={selectChainModalShow}
+        onHide={() => setSelectChainModalShow(false)}/>
       </div>
     </div>
   );

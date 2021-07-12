@@ -8,7 +8,6 @@ import TelegramLight from "assets/telegram.svg";
 import TelegramDark from "assets/telegramDark.svg";
 import InstagramLight from "assets/instagram.svg";
 import InstagramDark from "assets/instagramDark.svg";
-
 import "./index.scss";
 import { ThemeContext } from "context/themeContext";
 
