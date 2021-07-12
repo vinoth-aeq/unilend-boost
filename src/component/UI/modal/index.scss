@@ -1,26 +1,39 @@
-
-// @import '../../../theme.scss';
+@import "../../../theme.scss";
 // $colormodal: #215355;
 
-.custom-modalBody{
+.custom-modalBody {
+  // width: 27vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // border-radius: 10px;
+}
+
+.modal-content {
+  background-color: #fff;
+}
+
+.model-switch-dark {
+  .modal-content {
     background-color: #062829;
-    color: var(--theme-main-text);
-    // width: 27vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // border-radius: 10px;
+    color: #fff;
+  }
 }
 
-.metamask-logo{
-    width: 35px;
-    height: 40px;
+.metamask-logo {
+  width: 35px;
+  height: 40px;
 }
 
-.custom-modal-btn { 
+.custom-modal-btn {
   width: 60%;
   height: 5rem;
-  background-color: #215355;
+  background: linear-gradient(
+    306.61deg,
+    rgba(25, 116, 94, 0.189) 3.25%,
+    rgba(0, 219, 168, 0.3) 122.38%
+  );
+
   border: 2px solid #215355;
   cursor: pointer;
   color: #fff;
@@ -29,40 +42,42 @@
   padding: 0 5rem;
   justify-content: space-between;
   align-items: center;
- }
+}
 
- .selectchain-title {
-     width: 100%;
-    // background-color: #062829;
-    text-align: center;
- }
+.selectchain-title {
+  width: 100%;
+  // background-color: #062829;
+  text-align: center;
+}
 
- .network-logo{
-    width: 40px;
-    height: 50px;
-    align-self: center;
- }
+.network-logo {
+  width: 40px;
+  height: 50px;
+  align-self: center;
+}
 
- .network-title{
-    text-align: center;
- }
+.network-title {
+  text-align: center;
+}
 
+.custom-selectchain-body {
+  display: flex;
+  justify-content: space-around;
+  height: 30vh;
+  padding: 1rem;
+}
 
- .custom-selectchain-body{
-     
-     display: flex;
-     justify-content: space-around;
-     height: 30vh;
-     padding: 1rem;
- }
-
- .selectchain-list{
-     width: 25%;
-     height: 18vh;
-     display: flex;
-     flex-direction: column;
-     border-radius: 30px;
-     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-     justify-content: center;
- }
-
+.selectchain-list {
+  background: linear-gradient(
+    306.61deg,
+    rgba(25, 116, 94, 0.189) 3.25%,
+    rgba(0, 219, 168, 0.3) 122.38%
+  );
+  width: 25%;
+  height: 18vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+}
