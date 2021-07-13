@@ -1,38 +1,42 @@
 @import "../../../theme.scss";
 
-.custom-coin-modal{
-    display: flex;
-    justify-content: center;
+.custom-coin-modal {
+  display: flex;
+  justify-content: center;
 }
 
 .modal-content {
-    background-color: #fff;
-    border-radius: 5px;  
-    // width: 70%;
-  }
-  
-.custom-typehead{
-    width: 25vw;
-    height: 7vh;
-    // background-color: var(--theme-modal-typehead-bg-color);
-    border-radius: 20px;
-    display: flex;
+  background-color: #fff;
+  border-radius: 5px;
+  // width: 70%;
 }
 
-.custom-body{
-    width: 100%;
-    
+.custom-typehead {
+  width: 25vw;
+  height: 7vh;
+  // background-color: var(--theme-modal-typehead-bg-color);
+  border-radius: 20px;
+  display: flex;
 }
 
-.custom-row{
-    margin: auto;
-    border-bottom: 1px solid silver;
-    width: 80%;
-    text-align: left;
+.custom-body {
+  width: 100%;
 }
 
+.custom-row {
+  margin: auto;
+  width: 90%;
+  text-align: left;
+}
 
-.custom-logo{
-    padding:  2rem;
-    width: 20%;
+.custom-logo {
+  padding: 2rem;
+  width: 20%;
+}
+
+.list-col {
+  height: 60px;
+  display: grid;
+  grid-template-columns: 70px auto;
+  align-items: center;
 }
