@@ -15,11 +15,15 @@ const SelectDexModal = (props) => {
           className="custom-coin-modal"
           style={{ borderBottom: "0" }}
         >
-          <FormControl className= "custom-typehead" type="text" placeholder="Search Dex" />
+          <FormControl className= "custom-search" type="text" placeholder="Search Dex" />
         
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="custom-row-body">
           <Row className="custom-row">
+            <div className="list-col">
+              <img src={VectorImg} />
+              Zeroswap
+            </div>
             <div className="list-col">
               <img src={VectorImg} />
               Zeroswap
