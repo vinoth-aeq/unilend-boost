@@ -1,15 +1,12 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "context/themeContext";
 import VectorImg from "assets/Vector.svg";
-import { Modal, Row, Col } from "react-bootstrap";
-import options from "./dexData";
-import { Typeahead } from "react-bootstrap-typeahead";
+import { Modal, Row, FormControl } from "react-bootstrap";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import "./dexModel.scss";
 
 const SelectDexModal = (props) => {
   const data: any = useContext(ThemeContext);
-  const [selected, setSelected] = useState([]);
 
   return (
     <div>
@@ -18,15 +15,8 @@ const SelectDexModal = (props) => {
           className="custom-coin-modal"
           style={{ borderBottom: "0" }}
         >
-          <Typeahead
-            inputProps={{
-              className: "custom-typehead",
-            }}
-            placeholder="Search DEX"
-            onChange={setSelected}
-            options={["one", "two"]}
-            selected={selected}
-          />
+          <FormControl className= "custom-typehead" type="text" placeholder="Search Dex" />
+        
         </Modal.Header>
         <Modal.Body>
           <Row className="custom-row">
