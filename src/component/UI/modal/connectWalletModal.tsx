@@ -18,7 +18,7 @@ const ConnectWalletModal = (props) => {
       >
         <Modal.Body className="custom-modalBody">
           <Button className="custom-modal-btn">
-            <img src={MetamaskLogo} className="metamask-logo" />
+            <img src={MetamaskLogo} className="wallet-logo" />
             Metamask
           </Button>
 
