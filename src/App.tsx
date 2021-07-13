@@ -1,11 +1,13 @@
 import BigNumber from "bignumber.js";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import Cookies from "js-cookie";
 
 import { ThemeContext } from "context/themeContext";
 import Layout from "component/UI/layout";
 import MainCard from "component/UI/MainCard/mainCard";
 
 import "./App.scss";
+import { WalletContext } from "context/connectWallet/connectWalletContext";
 
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
@@ -14,6 +16,14 @@ BigNumber.config({
 
 function App() {
   const data: any = useContext(ThemeContext);
+  const { handleConnect } = useContext(WalletContext);
+
+  useEffect(() => {
+    let wallet = Cookies.getJSON("wallet");
+    if (wallet) {
+      handleConnect(wallet);
+    }
+  }, []);
 
   return (
     <div className={`App ${data.theme}`}>

@@ -40,40 +40,57 @@
   grid-template-columns: 70px auto;
   align-items: center;
   cursor: pointer;
-  
 }
 
-.custom-row-body{
-    height: 380px;
-    overflow-y:auto;
+.custom-row-body {
+  height: 380px;
+  overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-.model-switch-dark{
-    .modal-content{
-        background-color: #061b1d;
+.model-switch-dark {
+  .modal-content {
+    background-color: #061b1d;
+  }
+  .list-col {
+    &:hover {
+      background-color: #04101198;
     }
-    .list-col{
-        &:hover {
-            background-color: #04101198;
-          }
-    }
-    .custom-search{
-        background-color: #0D2E2F;
-        border: 0px solid #0D2E2F;
-    }
+  }
+  .custom-search {
+    background-color: #0d2e2f;
+    border: 0px solid #0d2e2f;
+  }
 }
 
-.model-switch-light{
-    .list-col{
-        &:hover {
-            background-color: #bfecf0;
-          }
+.modal-coin-dark {
+  .modal-content {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    height: 80%;
+  }
+}
+
+.modal-coin-light {
+  .modal-content {
+    background-color: transparent;
+    border: none;
+    color: white;
+    height: 80%;
+  }
+}
+
+.model-switch-light {
+  .list-col {
+    &:hover {
+      background-color: #bfecf0;
     }
-    .custom-search{
-        background-color: #F6F6F6;
-    }
+  }
+  .custom-search {
+    background-color: #f6f6f6;
+  }
 }

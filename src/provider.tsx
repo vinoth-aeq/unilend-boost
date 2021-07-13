@@ -1,9 +1,10 @@
-import ThemeContext from "context/themeContext";
+import WalletProvider from "context/connectWallet/connectWalletContext";
+import ThemeProvider from "context/themeContext";
 
 export function Provider(props) {
-    return (
-        <ThemeContext>
-            {props.children}
-        </ThemeContext>
-    )
+  return (
+    <ThemeProvider>
+      <WalletProvider>{props.children}</WalletProvider>
+    </ThemeProvider>
+  );
 }

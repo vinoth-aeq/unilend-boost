@@ -19,6 +19,18 @@
   }
 }
 
+.sr-only {
+  display: none;
+}
+
+.close {
+  background-color: transparent;
+  border: none;
+  color: white;
+  span {
+    font-size: 46px;
+  }
+}
 // custom card
 
 .paper {
