@@ -67,7 +67,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    grid-row-gap: 30px;
     width:100%;
+
    } 
    .custom-coin-search {
     width: 50vw;
