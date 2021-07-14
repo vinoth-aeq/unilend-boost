@@ -10,7 +10,7 @@ const ConnectWalletModal = (props) => {
   const data: any = useContext(ThemeContext);
   const { handleConnect } = useContext(WalletContext);
   return (
-    <div>
+    <div className={`${data.theme}`}>
       <Modal
         className={`model-switch-${data.theme}`}
         {...props}

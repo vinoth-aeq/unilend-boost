@@ -1,5 +1,6 @@
+import { dexList } from "common";
 import { ThemeContext } from "context/themeContext";
-import { useContext ,useState} from "react";
+import { useContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import {
   RightArrow,
@@ -13,7 +14,12 @@ import SelectDexModal from "../modal/selectDexModal";
 const SelectDex = () => {
   const data: any = useContext(ThemeContext);
   const [dexModalShow, setDexModalShow] = useState(false);
+  const [selectedDex, setSelectedDex] = useState<any>();
 
+  const handleDexChange = (id: number) => {
+    setSelectedDex(dexList.find((item) => item.id === id));
+    setDexModalShow(false);
+  };
 
   return (
     <>
@@ -33,10 +39,15 @@ const SelectDex = () => {
           alt=""
           height="20px"
         />
-        <Button className="switch-btn" onClick={() => setDexModalShow(true)}>Select DEX</Button>
+        <Button className="switch-btn" onClick={() => setDexModalShow(true)}>
+          {selectedDex ? selectedDex.name : "Select DEX"}
+        </Button>
       </div>
-      <SelectDexModal show={dexModalShow}
-        onHide={() => setDexModalShow(false)}/>
+      <SelectDexModal
+        show={dexModalShow}
+        onHide={() => setDexModalShow(false)}
+        handleDexChange={(id) => handleDexChange(id)}
+      />
     </>
   );
 };

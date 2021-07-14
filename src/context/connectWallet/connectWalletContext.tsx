@@ -78,6 +78,7 @@ export default function WalletProvider(props) {
               setConnectedAccount(res[0]);
               getAccountBalance(res[0], currentProvider);
               metamaskEventHandler((window as any).ethereum);
+              toggleConnecting(false);
             })
             .catch((e: any) => {
               console.log(e);
@@ -85,13 +86,16 @@ export default function WalletProvider(props) {
               toggleConnected(false);
             });
         })
-        .catch((e: any) => {});
+        .catch((e: any) => {
+          toggleConnecting(false);
+        });
     } else {
       setConnectedAccount(accounts[0]);
 
       getAccountBalance(accounts[0], currentProvider);
 
       metamaskEventHandler((window as any).ethereum);
+      toggleConnecting(false);
     }
   };
 
@@ -145,6 +149,7 @@ export default function WalletProvider(props) {
           });
         } catch (e) {
           console.log(e);
+          toggleConnecting(false);
         }
         break;
       default:
@@ -154,7 +159,13 @@ export default function WalletProvider(props) {
 
   return (
     <WalletContext.Provider
-      value={{ isConnected, connectedAccount, handleConnect, selectedChain }}
+      value={{
+        isConnected,
+        isConnecting,
+        connectedAccount,
+        handleConnect,
+        selectedChain,
+      }}
     >
       {props.children}
     </WalletContext.Provider>

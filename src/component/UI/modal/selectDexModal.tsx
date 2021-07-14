@@ -4,6 +4,7 @@ import VectorImg from "assets/Vector.svg";
 import { Modal, Row, FormControl } from "react-bootstrap";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import "./dexModel.scss";
+import { dexList } from "common";
 
 const SelectDexModal = (props) => {
   const data: any = useContext(ThemeContext);
@@ -15,23 +16,25 @@ const SelectDexModal = (props) => {
           className="custom-coin-modal"
           style={{ borderBottom: "0" }}
         >
-          <FormControl className= "custom-search" type="text" placeholder="Search Dex" />
-        
+          <FormControl
+            className="custom-search"
+            type="text"
+            placeholder="Search Dex"
+          />
         </Modal.Header>
         <Modal.Body className="custom-row-body">
           <Row className="custom-row">
-            <div className="list-col">
-              <img src={VectorImg} />
-              Zeroswap
-            </div>
-            <div className="list-col">
-              <img src={VectorImg} />
-              Zeroswap
-            </div>
-            <div className="list-col">
-              <img src={VectorImg} />
-              Zeroswap
-            </div>
+            {dexList.map((list) => (
+              <div
+                className="list-col"
+                onClick={() => {
+                  props.handleDexChange(list.id);
+                }}
+              >
+                <img src={VectorImg} />
+                {list.name}
+              </div>
+            ))}
           </Row>
         </Modal.Body>
       </Modal>
