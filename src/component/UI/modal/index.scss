@@ -89,7 +89,6 @@
 
 .selectchain-list {
   cursor: pointer;
-  // background-color: var(--theme-modal-bg-color);
   background: linear-gradient(
     306.61deg,
     rgba(25, 116, 94, 0.189) 3.25%,
@@ -97,7 +96,6 @@
   );
   width: 120px;
   height: 120px;
-  // height: 18vh;
   display: flex;
   flex-direction: column;
   border-radius: 30px;
