@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import web3, { connectWalletProvider, connectWalletWeb3 } from "ethereum/web3";
 import { web3Service } from "ethereum/web3Service";
@@ -12,10 +12,14 @@ export default function WalletProvider(props) {
     let _cache = Cookies.get("isConnected");
     return _cache ? _cache : false;
   });
+  const [connectedWallet, setConnectedWallet] = useState<any>(() => {
+    let _cache = Cookies.getJSON("wallet");
+    return _cache ? _cache : null;
+  });
   const [isConnecting, toggleConnecting] = useState<boolean>(false);
   const [connectedAccount, setConnectedAccount] = useState<string>();
   const [selectedChain, setSelectedChain] = useState<any>(() => {
-    let _cookie = Cookies.get("selectedChain");
+    let _cookie = Cookies.getJSON("selectedChain");
     return _cookie
       ? chainList.find((list) => list.id === _cookie)
       : chainList[0];
@@ -24,6 +28,18 @@ export default function WalletProvider(props) {
     currentProvider: web3,
     provider: EthProvider,
   });
+
+  useEffect(() => {
+    if (connectedWallet) handleConnect(connectedWallet);
+  }, [selectedChain, connectedWallet]);
+
+  const handleChainChange = (id: any) => {
+    let _chain: any = chainList.find((list) => list.id === id);
+    if (_chain) {
+      setSelectedChain(_chain);
+      Cookies.set("selectedChain", id);
+    }
+  };
 
   const metamaskEventHandler = (provider: any) => {
     provider.on("chainChanged", (chainId: any) => {
@@ -78,6 +94,7 @@ export default function WalletProvider(props) {
               setConnectedAccount(res[0]);
               getAccountBalance(res[0], currentProvider);
               metamaskEventHandler((window as any).ethereum);
+              toggleConnecting(false);
             })
             .catch((e: any) => {
               console.log(e);
@@ -85,13 +102,16 @@ export default function WalletProvider(props) {
               toggleConnected(false);
             });
         })
-        .catch((e: any) => {});
+        .catch((e: any) => {
+          toggleConnecting(false);
+        });
     } else {
       setConnectedAccount(accounts[0]);
 
       getAccountBalance(accounts[0], currentProvider);
 
       metamaskEventHandler((window as any).ethereum);
+      toggleConnecting(false);
     }
   };
 
@@ -99,6 +119,7 @@ export default function WalletProvider(props) {
     console.log("wallet", wallet);
     toggleConnecting(true);
     Cookies.set("wallet", wallet);
+    setConnectedWallet(wallet);
     try {
       if (wallet) {
         let currentProvider: any;
@@ -117,6 +138,10 @@ export default function WalletProvider(props) {
             provider = EthProvider;
         }
         handleWallet(currentProvider, wallet);
+        setWalletProvider({
+          currentProvider,
+          provider,
+        });
       }
     } catch (e) {
       toggleConnecting(false);
@@ -128,11 +153,100 @@ export default function WalletProvider(props) {
     let accounts;
     switch (selectedWallet.walletName) {
       case "Metamask":
-        // if (1) {
-        accounts = await web3Service.getAccounts();
-        console.log("accounts", accounts);
-        handleMetamask(accounts, provider);
-        // }
+        if (selectedChain.id === 1) {
+          accounts = await web3Service.getAccounts();
+          console.log("accounts", accounts);
+          handleMetamask(accounts, provider);
+        } else if (selectedChain.id === 2) {
+          try {
+            if (
+              (window as any).ethereum &&
+              (window as any).ethereum.selectedAddress
+            ) {
+              const provider = (window as any).ethereum;
+              const chainId = 56;
+              try {
+                await provider.request({
+                  method: "wallet_addEthereumChain",
+                  params: [
+                    {
+                      chainId: `0x${chainId.toString(16)}`,
+                      chainName: "Smart Chain",
+                      nativeCurrency: {
+                        name: "BNB",
+                        symbol: "bnb",
+                        decimals: 18,
+                      },
+                      rpcUrls: ["https://bsc-dataseed.binance.org/"],
+                      blockExplorerUrls: ["https://bscscan.com/"],
+                    },
+                  ],
+                });
+                accounts = await web3Service.getAccounts();
+
+                // if (accounts) {
+                handleMetamask(accounts, provider);
+                // }
+
+                return true;
+              } catch (error) {
+                console.error(error);
+
+                return false;
+              }
+            } else {
+              console.error(
+                "Can't setup the BSC network on metamask because window.ethereum is undefined"
+              );
+              toggleConnecting(false);
+              return false;
+            }
+          } catch (e) {
+            console.log(e);
+          }
+        } else if (selectedChain.id === 3) {
+          try {
+            if ((window as any).ethereum) {
+              const provider = (window as any).ethereum;
+              const chainId = 137;
+              try {
+                await provider.request({
+                  method: "wallet_addEthereumChain",
+                  params: [
+                    {
+                      chainId: `0x${chainId.toString(16)}`,
+                      chainName: "Matic Mainnet",
+                      nativeCurrency: {
+                        name: "Matic",
+                        symbol: "matic",
+                        decimals: 18,
+                      },
+                      rpcUrls: ["https://rpc-mainnet.maticvigil.com/"],
+                      blockExplorerUrls: ["https://explorer.matic.network/"],
+                    },
+                  ],
+                });
+                accounts = await web3Service.getAccounts();
+                handleMetamask(accounts, provider);
+                return true;
+              } catch (e) {
+                console.error(e);
+                return false;
+              }
+            } else {
+              if ((window as any).ethereum) {
+                accounts = await web3Service.getAccounts();
+
+                // if (accounts) {
+                handleMetamask(accounts, provider);
+              }
+              console.error(
+                "Can't setup the Matic network on metamask because window.ethereum is undefined"
+              );
+              return false;
+            }
+          } catch (e) {}
+        }
         break;
       case "WalletConnect":
         try {
@@ -145,6 +259,7 @@ export default function WalletProvider(props) {
           });
         } catch (e) {
           console.log(e);
+          toggleConnecting(false);
         }
         break;
       default:
@@ -154,7 +269,14 @@ export default function WalletProvider(props) {
 
   return (
     <WalletContext.Provider
-      value={{ isConnected, connectedAccount, handleConnect, selectedChain }}
+      value={{
+        isConnected,
+        isConnecting,
+        connectedAccount,
+        handleConnect,
+        selectedChain,
+        handleChainChange,
+      }}
     >
       {props.children}
     </WalletContext.Provider>

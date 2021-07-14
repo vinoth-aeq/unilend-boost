@@ -11,7 +11,8 @@ import { shortenAddress } from "Helpers";
 
 const NavBar = () => {
   const data: any = useContext(ThemeContext);
-  const { connectedAccount, selectedChain } = useContext(WalletContext);
+  const { connectedAccount, selectedChain, isConnecting } =
+    useContext(WalletContext);
   const [modalShow, setModalShow] = useState(false);
   const [selectChainModalShow, setSelectChainModalShow] = useState(false);
 
@@ -44,7 +45,7 @@ const NavBar = () => {
                     className="header-btn"
                     onClick={() => setModalShow(true)}
                   >
-                    Connect wallet
+                    {isConnecting ? "loading" : "Connect wallet"}
                   </Button>
                 )}
                 <Switch
@@ -54,11 +55,11 @@ const NavBar = () => {
                   checkedIcon={false}
                   onColor="#fff"
                   offColor="#215355"
-                  onHandleColor="FED330"
+                  onHandleColor="#FED330"
                   offHandleColor="#071F21"
                   height={30}
                   width={55}
-                  className="react-switch"
+                  className="switch"
                 />
               </Nav>
             </Col>

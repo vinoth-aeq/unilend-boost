@@ -3,20 +3,22 @@
 .custom-coin-modal {
   display: flex;
   justify-content: center;
+  height: 100px;
+  align-items: flex-end;
 }
 
 .modal-content {
   position: absolute;
   background-color: #fff;
   border-radius: 15px;
-  // width: 70%;
 }
 
 .custom-search {
-  width: 25vw;
-  height: 7vh;
+  width: 90%;
+  height: 50px;
   border-radius: 20px;
   display: flex;
+  padding: 10px 30px;
 }
 
 .custom-body {
@@ -65,22 +67,23 @@
     border: 0px solid #0d2e2f;
   }
 }
-
+@mixin modalContent() {
+  border: none;
+  color: #fff;
+  height: 80%;
+}
 .modal-coin-dark {
   .modal-content {
+    @include modalContent();
     background-color: transparent;
-    border: none;
-    color: #fff;
-    height: 80%;
   }
 }
 
 .modal-coin-light {
   .modal-content {
+    @include modalContent();
+
     background-color: transparent;
-    border: none;
-    color: white;
-    height: 80%;
   }
 }
 
@@ -93,4 +96,8 @@
   .custom-search {
     background-color: #f6f6f6;
   }
+}
+
+.custom-selectdex-logo{
+  
 }

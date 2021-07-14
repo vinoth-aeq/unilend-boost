@@ -110,3 +110,20 @@
   grid-template-columns: auto auto;
   grid-gap: 10px;
 }
+.modal-backdrop {
+  background: linear-gradient(
+    72.52deg,
+    rgba(154, 220, 223, 0.92) 2.4%,
+    rgba(210, 243, 247, 0.92) 52.21%,
+    rgba(154, 220, 223, 0.92) 99.97%
+  );
+}
+.dark {
+  .modal-backdrop {
+    background: radial-gradient(
+      61.97% 61.97% at 50.03% 44.69%,
+      #095d61 0%,
+      #0d2f36 100%
+    );
+  }
+}
