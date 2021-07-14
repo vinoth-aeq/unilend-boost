@@ -26,6 +26,7 @@ const SelectDexModal = (props) => {
           <Row className="custom-row">
             {dexList.map((list) => (
               <div
+                key={list.id}
                 className="list-col"
                 onClick={() => {
                   props.handleDexChange(list.id);

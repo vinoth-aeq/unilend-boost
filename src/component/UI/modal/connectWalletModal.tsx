@@ -20,6 +20,7 @@ const ConnectWalletModal = (props) => {
         <Modal.Body className="custom-modalBody">
           {walletList(1).map((wallet: any) => (
             <Button
+              key={wallet.id}
               className="custom-modal-btn"
               onClick={() => {
                 handleConnect(wallet);
