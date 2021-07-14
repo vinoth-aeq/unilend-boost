@@ -51,3 +51,38 @@ export const dexList = [
     name: "three",
   },
 ];
+
+export const coinList = [
+  {
+    id: 1,
+    name: "ETH",
+    cost: "20.45"
+  },
+  {
+    id: 2,
+    name: "BNB",
+    cost: "40.45"
+  },
+  {
+    id: 3,
+    name: "UFT",
+    cost: "30.45"
+
+  },
+  {
+    id: 4,
+    name: "ETH",
+    cost: "20.45"
+  },
+  {
+    id: 5,
+    name: "BNB",
+    cost: "40.45"
+  },
+  {
+    id: 6,
+    name: "UFT",
+    cost: "30.45"
+
+  },
+];
