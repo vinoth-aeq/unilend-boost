@@ -26,7 +26,7 @@ const SelectCoinModal = (props) => {
         </Modal.Header>
         <Modal.Body className="custom-coin-body">
           <div className="selectcoin-list">
-            <div>
+            <div className="custom-coinlist-div">
               <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">ETH</span>
             </div>
@@ -36,7 +36,7 @@ const SelectCoinModal = (props) => {
           </div>
 
           <div className="selectcoin-list">
-          <div>
+          <div className="custom-coinlist-div">
           <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">ETH</span>
           </div>
@@ -44,7 +44,7 @@ const SelectCoinModal = (props) => {
             </div>
 
             <div className="selectcoin-list">
-          <div>
+            <div className="custom-coinlist-div">
           <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">ETH</span>
           </div>
@@ -52,7 +52,7 @@ const SelectCoinModal = (props) => {
             </div>
 
             <div className="selectcoin-list">
-            <div>
+            <div className="custom-coinlist-div">
               <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">ETH</span>
             </div>
@@ -62,7 +62,7 @@ const SelectCoinModal = (props) => {
           </div>
 
           <div className="selectcoin-list">
-          <div>
+          <div className="custom-coinlist-div">
           <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">ETH</span>
           </div>
@@ -70,7 +70,7 @@ const SelectCoinModal = (props) => {
             </div>
 
             <div className="selectcoin-list">
-          <div>
+            <div className="custom-coinlist-div">
           <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">ETH</span>
           </div>
@@ -78,7 +78,7 @@ const SelectCoinModal = (props) => {
             </div>
 
             <div className="selectcoin-list">
-            <div>
+            <div className="custom-coinlist-div">
               <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">ETH</span>
             </div>
@@ -88,7 +88,7 @@ const SelectCoinModal = (props) => {
           </div>
 
           <div className="selectcoin-list">
-          <div>
+          <div className="custom-coinlist-div">
           <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">ETH</span>
           </div>
@@ -96,7 +96,7 @@ const SelectCoinModal = (props) => {
             </div>
 
             <div className="selectcoin-list">
-          <div>
+            <div className="custom-coinlist-div">
           <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">ETH</span>
           </div>
@@ -104,7 +104,7 @@ const SelectCoinModal = (props) => {
             </div>
 
             <div className="selectcoin-list">
-            <div>
+            <div className="custom-coinlist-div">
               <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">ETH</span>
             </div>
@@ -114,7 +114,7 @@ const SelectCoinModal = (props) => {
           </div>
 
           <div className="selectcoin-list">
-          <div>
+          <div className="custom-coinlist-div">
           <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">name</span>
           </div>
@@ -122,7 +122,7 @@ const SelectCoinModal = (props) => {
             </div>
 
             <div className="selectcoin-list">
-          <div>
+            <div className="custom-coinlist-div">
           <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">name</span>
           </div>
@@ -130,7 +130,7 @@ const SelectCoinModal = (props) => {
             </div>
 
             <div className="selectcoin-list">
-            <div>
+            <div className="custom-coinlist-div">
               <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">name</span>
             </div>
@@ -140,7 +140,7 @@ const SelectCoinModal = (props) => {
           </div>
 
           <div className="selectcoin-list">
-          <div>
+          <div className="custom-coinlist-div">
           <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">name</span>
           </div>
@@ -148,7 +148,7 @@ const SelectCoinModal = (props) => {
             </div>
 
             <div className="selectcoin-list">
-          <div>
+            <div className="custom-coinlist-div">
           <img alt="Logo" src={EthereumLogo} className="coin-logo" />
               <span className="coin-title">name</span>
           </div>

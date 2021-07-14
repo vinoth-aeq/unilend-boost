@@ -45,20 +45,25 @@
   justify-content: space-evenly;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 70px;
+  grid-column-gap: 70px;
   overflow: scroll;
 
 }
 
-@media (max-width: 900px) {
+// @media (max-width: 900px) {
+//   .custom-coin-body { 
+//     grid-template-columns: repeat(2, 1fr);
+//    }
+// }
+
+@media (max-width: 1000px) {
   .custom-coin-body { 
     grid-template-columns: repeat(2, 1fr);
    }
 }
 
-
 @media (max-width: 500px) {
   .custom-coin-body { 
-    // max-width: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,9 +81,7 @@
 
 
 .selectcoin-list {
-  max-width: 80%;
   cursor: pointer;
-  // width: 25vw;
   height: 60px;
   display: flex;
   border-radius: 12px;
@@ -95,4 +98,10 @@
 
 .coin-title {
   text-align: center;
+}
+
+.custom-coinlist-div{
+  display: flex;
+  align-items: center;
+  // min-width: 10vw;
 }
