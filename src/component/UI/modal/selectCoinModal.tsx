@@ -26,20 +26,22 @@ const SelectCoinModal = (props) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="custom-coin-body">
-        {coinList.map((list) => (
-
-          <div className="selectcoin-list"  onClick={() => {
-            props.handleCoinChange(list.id);
-          }}>
-            <div className="custom-coinlist-div">
-              <img alt="Logo" src={EthereumLogo} className="coin-logo" />
-              <span className="coin-title">{list.name}</span>
+          {coinList.map((list) => (
+            <div
+              className="selectcoin-list"
+              onClick={() => {
+                props.handleCoinChange(list.id);
+              }}
+            >
+              <div className="custom-coinlist-div">
+                <img alt="Logo" src={EthereumLogo} className="coin-logo" />
+                <span className="coin-title">{list.name}</span>
+              </div>
+              <div>
+                <span>$ {list.cost}</span>
+              </div>
             </div>
-            <div>
-              <span>$ {list.cost}</span>
-            </div>
-          </div>
- ))}
+          ))}
         </Modal.Body>
       </Modal>
     </div>
