@@ -4,7 +4,7 @@
 
 .modal-coin-dark {
   .custom-coin-search {
-    background-color: #071f21;
+    background-color: #050505;
     border: 0px solid #071f21;
   }
   .selectcoin-list {
@@ -36,17 +36,49 @@
   display: flex;
 }
 
+
+
 .custom-coin-body {
   display: grid;
+  width: 100%;
+  min-width: 95%;
+  justify-content: space-evenly;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 70px;
-  min-height: 15vh;
   overflow: scroll;
+
 }
 
+@media (max-width: 900px) {
+  .custom-coin-body { 
+    grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+
+@media (max-width: 500px) {
+  .custom-coin-body { 
+    // max-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+   } 
+   .custom-coin-search {
+    width: 50vw;
+  }
+  .selectcoin-list{
+    width: 60%;
+    height: 10%;
+  }
+
+}
+
+
 .selectcoin-list {
+  max-width: 80%;
   cursor: pointer;
-  width: 25vw;
+  // width: 25vw;
   height: 60px;
   display: flex;
   border-radius: 12px;

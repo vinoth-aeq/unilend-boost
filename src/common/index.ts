@@ -44,10 +44,10 @@ export const dexList = [
   },
   {
     id: 2,
-    name: "Tne",
+    name: "two",
   },
   {
     id: 3,
-    name: "Thne",
+    name: "three",
   },
 ];
