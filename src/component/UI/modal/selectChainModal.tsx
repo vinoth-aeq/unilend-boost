@@ -11,10 +11,10 @@ const SelectChainModal = (props) => {
   return (
     <div>
       <Modal className={`model-switch-${data.theme}`} {...props} centered>
-        <Modal.Header style={{ borderBottom: "0" }}>
+        <Modal.Header closeButton style={{ borderBottom: "0" }}>
           <Modal.Title className="selectchain-title">Select Chain</Modal.Title>
           {/* <div >X</div> */}
-        </Modal.Header>
+        </Modal.Header >
         <Modal.Body className="custom-selectchain-body">
           {chainList.map((list) => (
             <div className="selectchain-list">
