@@ -40,15 +40,15 @@ export const chainList = [
 export const dexList = [
   {
     id: 1,
-    name: "One",
+    name: "Zeroswap",
   },
   {
     id: 2,
-    name: "two",
+    name: "Darkpool",
   },
   {
     id: 3,
-    name: "three",
+    name: "quickswap",
   },
 ];
 
@@ -71,12 +71,12 @@ export const coinList = [
   },
   {
     id: 4,
-    name: "ETH",
+    name: "USDC",
     cost: "20.45"
   },
   {
     id: 5,
-    name: "BNB",
+    name: "CFI",
     cost: "40.45"
   },
   {
